@@ -15,7 +15,7 @@ public class CommonController {
 
 	protected JdbcTemplate getJdbcTemplate() {
 
-		try {
+		try { 
 			if (ds == null) {
 				InitialContext cxt = new InitialContext();
 				ds = (DataSource) cxt.lookup("java:/comp/env/jdbc/FowebDB");
