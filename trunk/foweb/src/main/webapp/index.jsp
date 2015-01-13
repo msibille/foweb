@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<div ng-app="myapp" ng-controller="homeIndexController">
+	<div ng-app="logon" ng-controller="homeIndexController">
 		<p>Benvenuto {{user.nome}} !!</p>
 		<div>
 			User <input type="text" ng-model="post.user" />
@@ -18,7 +18,7 @@
 		<div>
 			<input type="button" ng-click="login()" value="login" />
 		</div>
-		<div>{{error}}</div>
+		<div>{{error.message}}</div>
 
 	</div>
 </body>

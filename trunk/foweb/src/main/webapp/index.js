@@ -1,4 +1,4 @@
-var app = angular.module("myapp", []);
+var app = angular.module("logon", []);
 
 app.controller("homeIndexController", function($scope, $http) {
 
@@ -6,7 +6,7 @@ app.controller("homeIndexController", function($scope, $http) {
 
 		$http.post('./user/logon', $scope.post).success(function(data) {
 			$scope.user = data.retVal;
-			$scope.error = data.exception.message;
+			$scope.error = data.exception;
 		}).error(function(data, status) {
 			$scope.error = data.message || " Request failed " || status;
 		});

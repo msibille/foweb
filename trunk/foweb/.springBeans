@@ -9,6 +9,7 @@
 	<configs>
 	</configs>
 	<autoconfigs>
+		<config>java:it.finsoft.FowebApplication</config>
 	</autoconfigs>
 	<configSets>
 	</configSets>

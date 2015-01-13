@@ -2,33 +2,13 @@ package it.finsoft;
 
 import it.finsoft.user.UserVO;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.http.HttpSession;
-import javax.sql.DataSource;
 
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
-public class CommonController {
-
-	private static DataSource ds = null;
-
-	protected JdbcTemplate getJdbcTemplate() {
-
-		try { 
-			if (ds == null) {
-				InitialContext cxt = new InitialContext();
-				ds = (DataSource) cxt.lookup("java:/comp/env/jdbc/FowebDB");
-
-				if (ds == null) {
-					throw new RuntimeException("Data source not found!");
-				}
-			}
-			return new JdbcTemplate(ds);
-		} catch (NamingException e) {
-			throw new RuntimeException(e.getMessage());
-		}
-	}
+@ImportResource("classpath:/datasource.xml")
+public abstract class CommonController<T> extends JdbcDaoSupport implements GenericDAO<T> {
 
 	protected UserVO getLoggedUser(HttpSession session) throws FowebException {
 		UserVO currentUser = (UserVO) session.getAttribute("currentUser");
@@ -39,4 +19,5 @@ public class CommonController {
 		return currentUser;
 
 	}
+
 }
