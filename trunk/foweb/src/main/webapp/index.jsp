@@ -7,19 +7,19 @@
 </head>
 
 <body>
-	<div ng-app="logon" ng-controller="homeIndexController">
-		<p>Benvenuto {{user.nome}} !!</p>
-		<div>
-			User <input type="text" ng-model="post.user" />
+	<div ng-app="logon" ng-controller="homeIndexController" class="popupMini">
+		<div class="center">Benvenuto su Foglio Ore WEB</div>
+		<div class="spacerMini"></div>
+		<div class="labelMidi">User</div>
+		<div class="field">
+			<input type="text" ng-model="post.user" />
 		</div>
-		<div>
-			Password <input type="password" ng-model="post.password" />
-		</div>
-		<div>
+		<div class="labelMidi">Password</div>
+		<div class="field"><input type="password" ng-model="post.password" /></div>
+		<div class=center>
 			<input type="button" ng-click="login()" value="login" />
 		</div>
-		<div>{{error.message}}</div>
-
+		<div class="error">{{error.message}}</div>
 	</div>
 </body>
 </html>

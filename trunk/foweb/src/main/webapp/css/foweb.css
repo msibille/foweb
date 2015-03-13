@@ -1,0 +1,64 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	font-family: verdana;
+	background-color: #CCCCCC;
+}
+
+div.error {
+	visibility: hidden;
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -150px;
+	border: 1px solid gray;
+	border-radius: 25px;
+	background-color: red;
+	color: yellow;
+	font-weight: bold;
+}
+
+div.popupMini {
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -100px 0 0 -150px;
+	border: 1px solid gray;
+	border-radius: 25px;
+	background-color: #DDDDDD;
+}
+
+div.center {
+	width: 100%;
+	text-align: center;
+}
+
+div.labelMidi {
+/* 	width: 100px; */
+	text-align: right;
+	background-color: lime;
+	display: block;
+}
+
+div.field {
+	display: block;
+	background-color: yellow;
+}
+
+div.spacerMini {
+	height: 20px;
+}
+
+div.spacerMidi {
+	height: 40px;
+}
+
+div.spacerMaxi {
+	height: 100px;
+}
